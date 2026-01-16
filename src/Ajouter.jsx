@@ -1,6 +1,8 @@
 import {useState} from "react";
+import { useNavigate } from 'react-router-dom';
 
 function Ajouter({ajouterTache}) {
+    const navigate = useNavigate();
     const [titre,setTitre] = useState ("");
     const [description,setDescription] = useState ("");
     const handleSubmit = (e) => {
@@ -10,6 +12,8 @@ function Ajouter({ajouterTache}) {
             titre: titre,
             description: description
         });
+        navigate("/");
+
     };
     return (
         <div>
